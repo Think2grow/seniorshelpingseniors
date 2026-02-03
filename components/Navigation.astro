@@ -1,0 +1,40 @@
+---
+const navLinks = [
+  { label: 'Care Services', href: '#services', submenu: [
+    { label: 'Companionship & Socialization', href: '#companionship' },
+    { label: 'Personal Care & Daily Living Assistance', href: '#personal-care' },
+    { label: 'Memory, Dementia & Alzheimer’s Care', href: '#memory-care' },
+    { label: 'Respite Care', href: '#respite' },
+    { label: 'Specialized Care', href: '#specialized' },
+    { label: 'Veteran Services', href: '#veteran' },
+    { label: 'Meal Preparation & Shopping', href: '#meals' },
+    { label: 'Light Housekeeping', href: '#housekeeping' },
+  ]},
+  { label: 'Caregiver Positions', href: '#' },
+  { label: 'Locations', href: '#' },
+  { label: 'Blog', href: '#' },
+  { label: 'Contact', href: '#contact' },
+  { label: 'Franchise Info', href: '#' },
+];
+---
+<nav class="w-full bg-white border-b border-neutral-200">
+  <div class="max-w-5xl mx-auto flex items-center justify-between px-4 py-3">
+    <a href="/" class="font-bold text-lg tracking-tight text-primary">Seniors Helping Seniors<sup>®</sup></a>
+    <ul class="flex gap-6 items-center">
+      {navLinks.map(link => (
+        <li class="relative group">
+          <a href={link.href} class="hover:text-primary font-medium">{link.label}</a>
+          {link.submenu && (
+            <ul class="absolute left-0 top-full mt-2 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity z-10 min-w-[220px]">
+              {link.submenu.map(sublink => (
+                <li>
+                  <a href={sublink.href} class="block px-4 py-2 hover:bg-neutral-100">{sublink.label}</a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+  </div>
+</nav>

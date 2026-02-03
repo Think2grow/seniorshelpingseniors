@@ -1,0 +1,26 @@
+---
+const footerLinks = [
+  { label: 'Contact', href: '/contact' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Terms & Conditions', href: '/terms' },
+];
+---
+<footer class="w-full bg-neutral-50 border-t border-neutral-200 mt-12">
+  <div class="max-w-5xl mx-auto px-4 py-8 flex flex-col md:flex-row md:justify-between gap-8">
+    <div>
+      <div class="font-bold text-lg mb-1">Seniors Helping Seniors<sup>®</sup> Southern Utah</div>
+      <div class="text-sm">840 S. Black Alder Drive<br />St. George, Utah 84790</div>
+      <div class="text-sm mt-1">License # 2025-PCA-F25-117485</div>
+      <div class="text-sm mt-1">Phone: <a href="tel:4359002465" class="underline">435-900-2465</a></div>
+    </div>
+    <nav>
+      <ul class="flex flex-col gap-2 text-sm">
+        {footerLinks.map(link => (
+          <li>
+            <a href={link.href} class="hover:underline font-semibold text-[#3b5998]">{link.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</footer>

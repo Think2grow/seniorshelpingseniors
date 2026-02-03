@@ -1,0 +1,146 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Footer from '../../components/Footer.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+<MainLayout title="Seniors Helping Seniors® Southern Utah">
+  <Fragment slot="fullbleed">
+    <section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+      <img
+        src="/shs-hero-template-homepage-01.jpg"
+        alt="Southern Utah In-Home Senior Care"
+        class="absolute inset-0 w-full h-full object-cover object-center"
+        draggable="false"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/35 via-black/15 to-black/35"></div>
+      <div class="relative z-10 w-full max-w-7xl mx-auto py-20 px-6 md:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+          <div class="hidden lg:block lg:col-span-6" aria-hidden="true"></div>
+          <div class="lg:col-span-6 lg:justify-self-end w-full lg:translate-x-[8%]">
+            <div class="w-full max-w-3xl bg-white/95 rounded-2xl shadow-2xl p-8 md:p-10 flex flex-col gap-4">
+              <div class="pb-4 border-b border-neutral-200 text-left">
+                <div class="flex items-center gap-2">
+                  <span class="h-2 w-2 rounded-full bg-[#e94e1b]"></span>
+                  <div class="text-xs font-semibold tracking-widest text-neutral-600 uppercase">Seniors Helping Seniors<sup>®</sup></div>
+                </div>
+                <h1 class="mt-3 text-2xl md:text-3xl font-extrabold tracking-tight text-neutral-900 leading-tight">
+                  Southern Utah In-Home Senior Care
+                </h1>
+                <p class="mt-2 text-sm md:text-base text-neutral-700">
+                  Local, regulated in-home support for older adults and their families across Southern Utah.
+                </p>
+              </div>
+
+              <ContactForm compact={true} legend="Request information" />
+              <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 items-center text-[#e94e1b] font-semibold">
+                <span class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" class="inline w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 01-8 0V8a4 4 0 018 0v4z" /></svg>info@southernutahshs.com</span>
+                <span class="flex items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" class="inline w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A2 2 0 008.48 19h7.04a2 2 0 001.83-1.3L17 13M7 13V6h10v7" /></svg>435-900-2465</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </Fragment>
+  <section class="mt-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white border border-neutral-200 rounded-xl shadow-sm p-6">
+        <div class="text-sm font-semibold text-neutral-500">Office</div>
+        <div class="font-bold text-lg">Seniors Helping Seniors<sup>®</sup> Southern Utah</div>
+        <div class="mt-2 text-sm text-neutral-700">
+          840 S. Black Alder Drive<br />St. George, Utah 84790
+        </div>
+      </div>
+      <div class="bg-white border border-neutral-200 rounded-xl shadow-sm p-6">
+        <div class="text-sm font-semibold text-neutral-500">Licensing</div>
+        <div class="font-bold text-lg">License # 2025-PCA-F25-117485</div>
+        <div class="mt-2 text-sm text-neutral-700">
+          We follow applicable requirements for in-home, non-medical support services.
+        </div>
+      </div>
+      <div class="bg-white border border-neutral-200 rounded-xl shadow-sm p-6">
+        <div class="text-sm font-semibold text-neutral-500">Contact</div>
+        <div class="mt-1 text-sm text-neutral-700">Phone: <a href="tel:4359002465">435-900-2465</a></div>
+        <div class="mt-1 text-sm text-neutral-700">Email: <a href="mailto:info@southernutahshs.com">info@southernutahshs.com</a></div>
+        <div class="mt-3">
+          <a href="/contact" class="inline-block bg-[#3b5998] text-white no-underline font-semibold rounded-md px-4 py-2 hover:bg-[#324c86]">Contact Page</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-12">
+    <h2>Our Senior Care Services</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {[
+        'Companionship & Socialization',
+        'Personal Care & Daily Living Assistance',
+        'Memory, Dementia & Alzheimer’s Care',
+        'Respite Care',
+        'Specialized Care',
+        'Veteran Services',
+        'Meal Preparation & Shopping',
+        'Light Housekeeping',
+      ].map((service) => (
+        <div class="bg-white border border-neutral-200 rounded-xl p-4 shadow-sm">
+          <div class="font-semibold text-neutral-900">{service}</div>
+          <div class="text-sm text-neutral-600 mt-1">Practical, respectful help tailored to the day-to-day.</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-12">
+    <h2>Communities We Serve</h2>
+    <div class="bg-white border border-neutral-200 rounded-xl shadow-sm p-6">
+      <details>
+        <summary class="cursor-pointer font-semibold text-neutral-900">St. George area communities</summary>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-neutral-700">
+          {[
+            'St. George',
+            'Washington',
+            'Santa Clara',
+            'Ivins',
+            'Hurricane',
+            'La Verkin',
+            'Toquerville',
+            'Veyo',
+            'Pine Valley',
+            'Leeds',
+          ].map((place) => (
+            <div class="flex items-center gap-2">
+              <span class="h-2 w-2 rounded-full bg-[#3b5998]"></span>
+              <span>{place}</span>
+            </div>
+          ))}
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="mt-12">
+    <h2>About Seniors Helping Seniors<sup>®</sup></h2>
+    <div class="bg-white border border-neutral-200 rounded-xl shadow-sm p-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="lg:col-span-2">
+        <p>
+          Seniors Helping Seniors<sup>®</sup> is built on a simple idea: seniors often feel most comfortable with help from someone who understands their stage of life.
+          Our companionship-first approach supports independence while providing practical assistance at home.
+        </p>
+        <p>
+          Here in Southern Utah, we focus on reliable, steady care coordination and clear communication so families feel informed and supported.
+        </p>
+        <a href="/contact" class="inline-block bg-transparent text-[#3b5998] no-underline font-semibold hover:underline">How to contact us</a>
+      </div>
+      <div class="bg-neutral-50 border border-neutral-200 rounded-xl p-4">
+        <div class="font-semibold">Our Mission</div>
+        <p class="text-sm text-neutral-700">
+          Improve quality of life, promote independence, and serve with respect, dignity, and connection.
+        </p>
+        <a href="/privacy-policy" class="text-sm">Learn more</a>
+      </div>
+    </div>
+  </section>
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</MainLayout>

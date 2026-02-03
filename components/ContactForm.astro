@@ -1,0 +1,63 @@
+---
+interface Props {
+  legend?: string;
+  compact?: boolean;
+}
+
+const {
+  legend = "We're here to help",
+  compact = false,
+} = Astro.props;
+
+const fieldClass = compact
+  ? 'block w-full border border-neutral-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#3b5998]'
+  : 'block w-full border border-neutral-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#3b5998]';
+---
+
+<form class={compact ? 'flex flex-col gap-3' : 'flex flex-col gap-4'} method="post">
+  <fieldset class="space-y-3">
+    <legend class="sr-only">{legend}</legend>
+
+    <select name="interest" required class={fieldClass}>
+      <option value="" disabled selected>I'm interested in:*</option>
+      <option value="care">In-home care for a loved one</option>
+      <option value="caregiver">Caregiver opportunities</option>
+      <option value="general">General question</option>
+    </select>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <input name="name" type="text" autocomplete="name" placeholder="Name*" required class={fieldClass} />
+      <input name="email" type="email" autocomplete="email" placeholder="Email*" required class={fieldClass} />
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <input name="phone" type="tel" autocomplete="tel" placeholder="Phone Number*" required class={fieldClass} />
+      <input name="postalCode" type="text" autocomplete="postal-code" placeholder="Zip Code*" required class={fieldClass} />
+    </div>
+
+    <textarea name="message" placeholder="Tell us how we can help." rows={compact ? 3 : 4} class={fieldClass}></textarea>
+
+    <div class="space-y-2 text-xs text-neutral-700 leading-relaxed">
+      <label class="flex gap-2 items-start">
+        <input name="smsTransactionalConsent" type="checkbox" class="mt-1" />
+        <span>
+          I agree to receive transactional and account-related text messages from Seniors Helping Seniors at the number provided. Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to unsubscribe. Reply HELP for assistance. See our Privacy Policy and Terms of Service.
+        </span>
+      </label>
+
+      <label class="flex gap-2 items-start">
+        <input name="smsMarketingConsent" type="checkbox" class="mt-1" />
+        <span>
+          I agree to receive marketing and promotional text messages (offers, reminders, announcements, and follow-ups) from Seniors Helping Seniors. Msg &amp; data rates may apply. Msg frequency varies. Reply STOP to unsubscribe. Reply HELP for assistance. See our Privacy Policy and Terms of Service.
+        </span>
+      </label>
+
+      <div class="flex flex-wrap gap-x-4 gap-y-1">
+        <a href="/privacy-policy" class="underline text-[#3b5998]">Privacy Policy</a>
+        <a href="/terms" class="underline text-[#3b5998]">Terms of Service</a>
+      </div>
+    </div>
+
+    <button type="submit" class="bg-[#e94e1b] text-white font-bold rounded py-2">SUBMIT</button>
+  </fieldset>
+</form>

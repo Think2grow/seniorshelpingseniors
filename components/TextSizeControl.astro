@@ -1,0 +1,16 @@
+---
+---
+---
+<div class="flex items-center gap-2 text-sm" id="text-size-control">
+  <button type="button" aria-label="Decrease text size" class="px-2 py-1 border rounded" onclick="window.shsTextSize && window.shsTextSize(-0.1)">A-</button>
+  <span>Text Size</span>
+  <button type="button" aria-label="Increase text size" class="px-2 py-1 border rounded" onclick="window.shsTextSize && window.shsTextSize(0.1)">A+</button>
+</div>
+<script>
+  window.shsTextSize = (delta) => {
+    const html = document.documentElement;
+    let size = parseFloat(html.style.fontSize || '1');
+    size = Math.max(0.8, Math.min(1.5, size + delta));
+    html.style.fontSize = size + 'em';
+  };
+</script>
