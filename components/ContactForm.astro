@@ -14,7 +14,7 @@ const fieldClass = compact
   : 'block w-full border border-neutral-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#3b5998]';
 ---
 
-<form class={compact ? 'flex flex-col gap-3' : 'flex flex-col gap-4'} method="post">
+<form class={compact ? 'flex flex-col gap-3' : 'flex flex-col gap-4'} method="get" action="/thank-you">
   <fieldset class="space-y-3">
     <legend class="sr-only">{legend}</legend>
 

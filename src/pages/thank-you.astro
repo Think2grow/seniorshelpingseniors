@@ -1,0 +1,36 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<MainLayout title="Thank You | Seniors Helping Seniors® Southern Utah">
+  <section class="max-w-3xl mx-auto">
+    <div class="bg-white border border-neutral-200 rounded-2xl shadow-sm p-6 md:p-10">
+      <div class="text-xs font-semibold tracking-widest text-neutral-600 uppercase">Seniors Helping Seniors<sup>®</sup> Southern Utah</div>
+      <h1 class="mt-3 text-3xl font-extrabold tracking-tight text-neutral-900">Thank you</h1>
+      <p class="mt-3 text-neutral-700">
+        We’ve received your request. If you need immediate help, call
+        <a href="tel:4359002465">435-900-2465</a>.
+      </p>
+
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <a href="/" class="inline-block text-center bg-[#3b5998] text-white no-underline font-semibold rounded-md px-4 py-3 hover:bg-[#324c86]">
+          Return Home
+        </a>
+        <a href="/contact" class="inline-block text-center bg-white border border-neutral-300 text-[#3b5998] no-underline font-semibold rounded-md px-4 py-3 hover:bg-neutral-50">
+          Contact Page
+        </a>
+      </div>
+
+      <div class="mt-8 text-sm text-neutral-600">
+        <a href="/privacy-policy">Privacy Policy</a>
+        <span class="mx-2">•</span>
+        <a href="/terms">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </section>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
+</MainLayout>
